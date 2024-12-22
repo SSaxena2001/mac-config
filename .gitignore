@@ -1,0 +1,11 @@
+
+yarn/
+.DS_Store
+
+alacritty/themes/
+configstore/
+raycast/
+dotfiles-public/
+gh/
+gh-copilot/
+github-copilot/
