@@ -1,0 +1,17 @@
+theme = "Solarized Dark Higher Contrast"
+font-family = "Geist Mono Medium"
+font-family-italic = "Codelia"
+font-feature = -liga
+font-size = 18
+keybind = alt+space=toggle_quick_terminal
+cursor-style = block
+shell-integration-features = no-cursor
+macos-titlebar-style = hidden
+macos-window-shadow = true
+macos-auto-secure-input = true
+window-decoration = false
+window-padding-color = background
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.8
+background-blur-radius = 24
