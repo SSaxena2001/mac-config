@@ -9,3 +9,5 @@ dotfiles-public/
 gh/
 gh-copilot/
 github-copilot/
+
+tmux/plugins

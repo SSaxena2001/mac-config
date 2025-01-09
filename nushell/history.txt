@@ -1,0 +1,132 @@
+clear
+nvim
+nvim ~/.config/nushell/
+clear
+nvim
+ls
+lls
+clear
+ls
+clear
+eza
+clear
+eza --file
+clear
+brew install carapace
+clear
+nvim
+clear
+nvim ~/.config/nushell/
+clear
+exit
+nvim ~/.config/nushell/
+exit
+clear
+exit
+starship init nu | save -f ~/.cache/starship/init.nu
+curl -sS https://starship.rs/install.sh | sh
+mkdir ~/.cache/starship<\n>        starship init nu | save -f ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu
+clear
+lls
+clear
+ll
+clear
+nvim
+clear
+ls ~/.config/
+nvim ~/.config/starship.toml
+clear
+ll
+clear
+nvim ~/.config/nushell/env.nu
+clear
+lls
+clear
+la
+clear
+lls
+celar
+clear
+tmux
+tux
+tmux
+clear
+lls
+clear
+nvim ~/.config/nushell/env.nu
+node --version
+z file
+clear
+fzf
+cd ~
+clear
+nvim ~/.config/nushell/config.nu
+ls
+la
+clear
+la
+clear
+nvim ~/.config/nushell/config.nu
+ll
+lt
+clear
+$nu.config-path
+$env
+clear
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+:w
+clear
+ll
+clear
+source ~/.config/nushell/config.nu
+nvim ~/.config/nushell/env.nu
+source ~/.config/nushell/config.nu
+nvim ~/.config/nushell/env.nu
+zoxide init nushell | save -f ~/.zoxide.nu<\n>
+nvim ~/.config/nushell/env.nu
+clear
+source ~/.config/nushell/config.nu
+nvim ~/.config/nushell/env.nu
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu<\n>
+source ~/.config/nushell/config.nu
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save --force ~/.cache/carapace/init.nu<\n>
+source ~/.config/nushell/config.nu
+nvim ~/.config/nushell/config.nu
+clear
+source ~/.config/nushell/config.nu
+clear
+ll
+clear
+lla
+claer
+ls
+clear
+lt
+clear
+exit
+clear
+exut
+exit
+nvim ~/.config/nushell/config.nu
+clear
+exit
+clear
+lls
+clear
+nvim ~/.config/nushell/config.nu
+source ~/.config/nushell/config.nu
+lls
+clear
+lls
+clear
+cat /etc/shells 
+which nu
+sudo echo "/opt/homebrew/bin/nu" >> /etc/shells 
+cat /etc/shells 
+chsh -s /opt/homebrew/bin/nu
+clear
+lls
+clear
+exit

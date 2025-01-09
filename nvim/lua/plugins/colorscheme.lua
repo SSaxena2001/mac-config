@@ -9,14 +9,11 @@ return {
 				terminal_colors = true,
 				styles = {
 					keywords = { italic = true },
-					functions = {
-						italic = true,
-					},
 					sidebars = "transparent",
 					floats = "transparent",
 				},
 				lualine_bold = true,
-				sidebars = { "qf", "vista_kind", "terminal", "packer" },
+				sidebars = { "qf", "vista_kind", "terminal", "packer", "fzf" },
 				on_highlights = function(hl, c)
 					hl.TelescopeNormal = {
 						bg = c.bg_dark,
@@ -79,5 +76,43 @@ return {
 		opts = {
 			-- configuration goes here
 		},
+	},
+	{
+		"rebelot/kanagawa.nvim",
+		lazy = true,
+		priority = 1000,
+		opts = function()
+			return {
+				undercurl = true,
+				commentStyle = { italic = true },
+				keywordStyle = { italic = true },
+				transparent = true,
+				terminalColors = true,
+			}
+		end,
+	},
+	{
+		"olimorris/onedarkpro.nvim",
+		lazy = true,
+		priority = 1000, -- Ensure it loads first
+		opts = function()
+			return {
+				options = {
+					transparency = true,
+					terminal_colors = true,
+					lualine_transparency = true,
+					cursorline = true,
+				},
+				highlights = {
+					Comment = { italic = true },
+					Directory = { bold = true },
+					ErrorMsg = { italic = true, bold = true },
+				},
+				styles = {
+					comments = "italic",
+					keywords = "italic",
+				},
+			}
+		end,
 	},
 }

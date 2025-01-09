@@ -30,6 +30,14 @@ set -gx PATH node_modules/.bin $PATH
 set -g GOPATH $HOME/go
 set -gx PATH $GOPATH/bin $PATH
 
+#Android
+set -gx PATH ~/Library/Android/sdk/platform-tools $PATH
+set -gx PATH ~/Library/Android/sdk/emulator $PATH
+set -gx PATH ~/Library/Android/sdk/tools $PATH
+set -gx PATH ~/Library/Android/sdk/tools/bin $PATH
+
+set -gx ANDROID_HOME ~/Library/Android/sdk
+
 if type -q eza
     alias ll "eza -l -g --icons"
     alias lls "ll -a"
@@ -37,3 +45,10 @@ end
 
 set -g FZF_PREVIEW_FILE_CMD "bat --style=numbers --color=always --line-range :500"
 set -g FZF_LEGACY_KEYBINDINGS 0
+
+# pnpm
+set -gx PNPM_HOME "/Users/suvigya1402/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
