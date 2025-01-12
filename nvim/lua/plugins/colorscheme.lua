@@ -8,7 +8,9 @@ return {
 				transparent = true,
 				terminal_colors = true,
 				styles = {
-					keywords = { italic = true },
+					keywords = { italic = true, bold = true },
+					constants = { bold = true },
+					types = { undercurl = true },
 					sidebars = "transparent",
 					floats = "transparent",
 				},

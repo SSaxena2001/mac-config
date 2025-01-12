@@ -130,3 +130,160 @@ clear
 lls
 clear
 exit
+nvim
+clear
+nvim ~/.config/nushell/config.nu
+nvim ~/.config/ghostty/config 
+clear
+lls
+celar
+clear
+nvim ~/.config/ghostty/config 
+clear
+nvim ~/.config/ghostty/config 
+clear
+nvim
+nvim ~/.config/starship.toml
+clear
+nvim
+clear
+cler
+clear
+cklear
+clear
+nvim
+celar
+clear
+clear
+nvim
+clear
+nvim
+c;ear
+clear
+nvim
+clear
+nvim ~/.config/ghostty/config 
+clear
+nvim
+clear
+nvim
+clear
+nvim
+clear
+lls
+clear
+ls
+rm -rf build-1736003631097.apk build-1736004767326.apk
+clear
+lls
+clear
+lls
+clear
+lls
+clear
+nvim ~/.config/ghostty/config 
+clear
+lls
+clear
+ll
+clear
+nvim
+nvim ~/.config/ghostty/config 
+clear
+nvim ~/.config/ghostty/config 
+clear
+lls
+clear
+nvim
+clear
+lls
+clear
+nvim
+clear
+nvim
+nvim ~/.config/ghostty/config 
+nvim
+nvim ~/.config/ghostty/config 
+clear
+nvim
+clear
+lls
+clear
+nvim
+clear
+nvim
+clear
+nvim
+nvim ~/.config/ghostty/config 
+nvim
+nvim 
+nvim ~/.config/ghostty/config 
+nvim
+nvim 
+nvim
+clear
+exit
+bun run android
+clear
+exit
+clear
+bat package.json | fzf
+cat package.json | fzf
+clear
+bunx expo install @expo-google-fonts/open-sans
+clear
+nvim
+bun run android
+bunx expo install @expo-google-fonts/noto-sans
+nvim
+bun uninstall @expo-google-fonts/open-sans @expo-google-fonts/roboto-slab
+clear
+bun run android
+cler
+clear
+nvim
+clear
+g st
+gst
+clear
+g restore .
+git restore .
+clear
+bun install
+clear
+bun run android
+bun run android
+clear
+lls
+clear
+nvim
+clear
+nvim
+clear
+ll
+ls
+ll
+ls
+clear
+bun run android
+nvim
+clear
+lls
+clear
+nvim
+clear
+lls
+clear
+lls
+clear
+lls
+clear
+nvim
+clear
+nvim
+clear
+exit
+clear
+lls
+clear
+exit
