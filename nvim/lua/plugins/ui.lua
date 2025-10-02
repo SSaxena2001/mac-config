@@ -60,14 +60,6 @@ return {
 		},
 	},
 
-	{
-		"snacks.nvim",
-		opts = {
-			scroll = { enabled = false },
-		},
-		keys = {},
-	},
-
 	-- buffer line
 	{
 		"akinsho/bufferline.nvim",

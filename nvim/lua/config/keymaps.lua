@@ -1,6 +1,6 @@
-local discipline = require("craftzdog.discipline")
-
-discipline.cowboy()
+-- local discipline = require("craftzdog.discipline")
+--
+-- discipline.cowboy()
 
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
@@ -70,3 +70,21 @@ end)
 keymap.set("n", "<leader>i", function()
 	require("craftzdog.lsp").toggleInlayHints()
 end)
+
+keymap.set("n", "gt", function()
+	vim.cmd("tab split")
+	local Snacks = require("snacks")
+	Snacks.picker.lsp_definitions()
+end, {})
+
+local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
+
+vim.api.nvim_create_augroup("JSLogMacro", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+	group = "JSLogMacro",
+	pattern = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+	callback = function()
+		vim.fn.setreg("l", "yoconsole.log('" .. esc .. "pa:" .. esc .. "la, " .. esc .. "pl")
+	end,
+})

@@ -1,98 +1,160 @@
 return {
-	-- Create annotations with one keybind, and jump your cursor in the inserted annotation
 	{
-		"danymat/neogen",
-		keys = {
-			{
-				"<leader>cc",
-				function()
-					require("neogen").generate({})
-				end,
-				desc = "Neogen Comment",
-			},
-		},
-		opts = { snippet_engine = "luasnip" },
-	},
-
-	-- Incremental rename
-	{
-		"smjonas/inc-rename.nvim",
-		cmd = "IncRename",
-		config = true,
-	},
-
-	-- Refactoring tool
-	{
-		"ThePrimeagen/refactoring.nvim",
-		keys = {
-			{
-				"<leader>r",
-				function()
-					require("refactoring").select_refactor()
-				end,
-				mode = "v",
-				noremap = true,
-				silent = true,
-				expr = false,
-			},
-		},
-		opts = {},
-	},
-
-	-- Go forward/backward with square brackets
-	{
-		"echasnovski/mini.bracketed",
-		event = "BufReadPost",
-		config = function()
-			local bracketed = require("mini.bracketed")
-			bracketed.setup({
-				file = { suffix = "" },
-				window = { suffix = "" },
-				quickfix = { suffix = "" },
-				yank = { suffix = "" },
-				treesitter = { suffix = "n" },
-			})
-		end,
-	},
-
-	-- Better increase/descrease
-	{
-		"monaqa/dial.nvim",
-    -- stylua: ignore
-    keys = {
-      { "<C-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
-      { "<C-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
-    },
-		config = function()
-			local augend = require("dial.augend")
-			require("dial.config").augends:register_group({
-				default = {
-					augend.integer.alias.decimal,
-					augend.integer.alias.hex,
-					augend.date.alias["%Y/%m/%d"],
-					augend.constant.alias.bool,
-					augend.semver.alias.semver,
-					augend.constant.new({ elements = { "let", "const" } }),
-				},
-			})
-		end,
-	},
-
-	{
-		"simrat39/symbols-outline.nvim",
-		keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-		cmd = "SymbolsOutline",
+		enabled = false,
+		"folke/flash.nvim",
+		---@type Flash.Config
 		opts = {
-			position = "right",
+			search = {
+				forward = true,
+				multi_window = false,
+				wrap = false,
+				incremental = true,
+			},
 		},
 	},
 
 	{
-		"nvim-cmp",
-		dependencies = { "hrsh7th/cmp-emoji" },
-		opts = function(_, opts)
-			table.insert(opts.sources, { name = "emoji" })
-			table.insert(opts.sources, { name = "supermaven" })
-		end,
+		"brenoprata10/nvim-highlight-colors",
+		event = "BufReadPre",
+		opts = {
+			render = "background",
+			enable_hex = true,
+			enable_short_hex = true,
+			enable_rgb = true,
+			enable_hsl = true,
+			enable_hsl_without_function = true,
+			enable_ansi = true,
+			enable_var_usage = true,
+			enable_tailwind = true,
+		},
+	},
+
+	{
+		"dinhhuy258/git.nvim",
+		event = "BufReadPre",
+		opts = {
+			keymaps = {
+				-- Open blame window
+				blame = "<Leader>gb",
+				-- Open file/folder in git repository
+				browse = "<Leader>go",
+			},
+		},
+	},
+	{
+		"kazhala/close-buffers.nvim",
+		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>th",
+				function()
+					require("close_buffers").delete({ type = "hidden" })
+				end,
+				"Close Hidden Buffers",
+			},
+			{
+				"<leader>tu",
+				function()
+					require("close_buffers").delete({ type = "nameless" })
+				end,
+				"Close Nameless Buffers",
+			},
+		},
+	},
+
+	{
+		"saghen/blink.cmp",
+		opts = {
+			completion = {
+				menu = {
+					winblend = vim.o.pumblend,
+				},
+			},
+			signature = {
+				window = {
+					winblend = vim.o.pumblend,
+				},
+			},
+		},
+	},
+
+	{
+		"snacks.nvim",
+		lazy = false,
+		priority = 1000,
+		keys = {
+			{
+				"<leader>fP",
+				function()
+					Snacks.picker.files({ cwd = require("lazy.core.config").options.root })
+				end,
+				desc = "Find Plugin File",
+			},
+			{
+				";f",
+				function()
+					Snacks.picker.files({ hidden = true, include_ignored = false })
+				end,
+				desc = "Lists files in your current working directory, respects .gitignore",
+			},
+			{
+				";r",
+				function()
+					Snacks.picker.grep({ rg_opts = "--hidden --color=always --line-number --column" })
+				end,
+				desc = "Live Grep (shows hidden, uses .gitignore)",
+			},
+			{
+				"\\",
+				function()
+					Snacks.picker.buffers()
+				end,
+				desc = "Lists open buffers",
+			},
+			{
+				";t",
+				function()
+					Snacks.picker.help()
+				end,
+				desc = "Lists available help tags",
+			},
+			{
+				";;",
+				function()
+					Snacks.picker.resume()
+				end,
+				desc = "Resume previous Snacks picker",
+			},
+			{
+				";e",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Lists diagnostics",
+			},
+			{
+				";s",
+				function()
+					Snacks.picker.lsp_symbols()
+				end,
+				desc = "Lists function names/variables from Treesitter",
+			},
+			{
+				"sf",
+				function()
+					local buffer_dir = vim.fn.expand("%:p:h")
+					Snacks.explorer({ cwd = buffer_dir })
+				end,
+				desc = "Open File Explorer with buffer path",
+			},
+			{
+				"gd",
+				function()
+					vim.cmd("tab split")
+					Snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+		},
 	},
 }
