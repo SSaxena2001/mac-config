@@ -88,3 +88,5 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.fn.setreg("l", "yoconsole.log('" .. esc .. "pa:" .. esc .. "la, " .. esc .. "pl")
 	end,
 })
+
+keymap.set("n", ";f", ":Pick files<CR>")

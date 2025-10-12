@@ -63,4 +63,14 @@ return {
 			},
 		},
 	},
+
+	{
+		"nvim-mini/mini.pick",
+		version = "*",
+		opts = {
+			mappings = {
+				choose_in_tabpage = "<C-t>",
+			},
+		},
+	},
 }

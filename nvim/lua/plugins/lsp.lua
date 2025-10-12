@@ -20,9 +20,24 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		opts = {
+			diagnostics = {
+				underline = true,
+				update_in_insert = false,
+				virtual_text = {
+					spacing = 6,
+					source = "if_many",
+					prefix = "",
+				},
+			},
 			inlay_hints = { enabled = false },
 			---@type lspconfig.options
 			servers = {
+				clangd = {
+					init_options = {
+						extraArgs = { "-I/Users/suvigya1402/.local" },
+					},
+					filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
+				},
 				cssls = {},
 				tailwindcss = {
 					root_dir = function(...)

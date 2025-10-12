@@ -8,9 +8,9 @@ return {
 				transparent = true,
 				terminal_colors = true,
 				styles = {
-					keywords = { italic = true },
-					constants = { italic = false, bold = true, underline = true },
-					functions = { italic = false },
+					keywords = { underline = true },
+					constants = { italic = true, bold = true, underline = true },
+					functions = {},
 					comments = { italic = true },
 					sidebars = "transparent",
 					floats = "transparent",
@@ -18,7 +18,11 @@ return {
 				lualine_bold = true,
 				sidebars = { "qf", "vista_kind", "terminal", "packer", "fzf" },
 				on_highlights = function(hl, c)
-					hl["Type"] = { underline = true, fg = c.yellow }
+					hl["Type"] = { italic = true, fg = c.yellow }
+					hl["DiagnosticVirtualTextError"] = { bg = "none", fg = c.red }
+					hl["DiagnosticVirtualTextWarn"] = { bg = "none", fg = c.yellow }
+					hl["DiagnosticVirtualTextInfo"] = { bg = "none", fg = c.blue }
+					hl["DiagnosticVirtualTextHint"] = { bg = "none", fg = c.cyan }
 				end,
 			}
 		end,
@@ -54,30 +58,6 @@ return {
 	},
 	{
 		"olimorris/onedarkpro.nvim",
-		lazy = true,
-		priority = 1000, -- Ensure it loads first
-		opts = function()
-			return {
-				options = {
-					transparency = true,
-					terminal_colors = true,
-					lualine_transparency = true,
-					cursorline = true,
-				},
-				highlights = {
-					Comment = { italic = true },
-					Directory = { bold = true },
-					ErrorMsg = { italic = true, bold = true },
-				},
-				styles = {
-					comments = "italic",
-					keywords = "italic",
-				},
-			}
-		end,
-	},
-	{
-		"olimorris/onedarkpro.nvim",
 		lazy = false,
 		priority = 1000, -- Ensure it loads first
 		opts = function()
@@ -97,6 +77,60 @@ return {
 				styles = {
 					comments = "italic",
 					keywords = "italic",
+				},
+			}
+		end,
+	},
+	{
+		"vague-theme/vague.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other plugins
+		opts = function()
+			return {
+				transparent = true,
+				bold = true,
+				italic = true,
+				style = {
+					boolean = "bold",
+					number = "none",
+					float = "none",
+					error = "bold",
+					comments = "italic",
+					conditionals = "italic",
+					functions = "none",
+					headings = "bold",
+					operators = "none",
+					strings = "none",
+					variables = "none",
+
+					-- keywords
+					keywords = "none",
+					keyword_return = "italic",
+					keywords_loop = "none",
+					keywords_label = "none",
+					keywords_exception = "none",
+
+					-- builtin
+					builtin_constants = "bold",
+					builtin_functions = "none",
+					builtin_types = "bold",
+					builtin_variables = "none",
+					plugins = {
+						cmp = {
+							match = "bold",
+							match_fuzzy = "bold",
+						},
+						dashboard = {
+							footer = "italic",
+						},
+						lsp = {
+							diagnostic_error = "bold",
+							diagnostic_hint = "none",
+							diagnostic_info = "italic",
+							diagnostic_ok = "none",
+							diagnostic_warn = "bold",
+						},
+					},
 				},
 			}
 		end,

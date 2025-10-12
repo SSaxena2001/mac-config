@@ -48,3 +48,31 @@ if vim.fn.has("nvim-0.8") == 1 then
 end
 
 vim.g.lazyvim_picker = "snacks"
+
+local kind_icons = {
+	Text = "",
+	Method = "",
+	Function = "",
+	Constructor = "",
+	Field = "",
+	Variable = "",
+	Class = "",
+	Interface = "ﰮ",
+	Module = "",
+	Property = "",
+	Unit = "",
+	Value = "",
+	Enum = "",
+	Keyword = "",
+	Snippet = "﬌",
+	Color = "",
+	File = "",
+	Reference = "",
+	Folder = "",
+	EnumMember = "",
+	Constant = "",
+	Struct = "",
+	Event = "",
+	Operator = "ﬦ",
+	TypeParameter = "",
+}

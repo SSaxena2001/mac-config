@@ -38,6 +38,7 @@ set -gx PATH ~/Library/Android/sdk/tools/bin $PATH
 
 set -gx ANDROID_HOME ~/Library/Android/sdk
 
+
 if type -q eza
     alias ll "eza -l -g --icons"
     alias lls "ll -a"
@@ -47,8 +48,18 @@ set -g FZF_PREVIEW_FILE_CMD "bat --style=numbers --color=always --line-range :50
 set -g FZF_LEGACY_KEYBINDINGS 0
 
 # pnpm
-set -gx PNPM_HOME "/Users/suvigya1402/Library/pnpm"
+set -gx PNPM_HOME /Users/suvigya1402/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+# ~/.config/fish/config.fish
+if status is-interactive
+    mise activate fish | source
+else
+    mise activate fish --shims | source
+end
+
+# opencode
+fish_add_path /Users/suvigya1402/.opencode/bin

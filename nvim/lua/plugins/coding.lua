@@ -75,6 +75,35 @@ return {
 					winblend = vim.o.pumblend,
 				},
 			},
+			appearance = {
+				kind_icons = {
+					Text = "",
+					Method = "",
+					Function = "",
+					Constructor = "",
+					Field = "",
+					Variable = "",
+					Class = "",
+					Interface = "ﰮ",
+					Module = "",
+					Property = "",
+					Unit = "",
+					Value = "",
+					Enum = "",
+					Keyword = "",
+					Snippet = "﬌",
+					Color = "",
+					File = "",
+					Reference = "",
+					Folder = "",
+					EnumMember = "",
+					Constant = "",
+					Struct = "",
+					Event = "",
+					Operator = "ﬦ",
+					TypeParameter = "",
+				},
+			},
 		},
 	},
 
@@ -90,13 +119,13 @@ return {
 				end,
 				desc = "Find Plugin File",
 			},
-			{
-				";f",
-				function()
-					Snacks.picker.files({ hidden = true, include_ignored = false })
-				end,
-				desc = "Lists files in your current working directory, respects .gitignore",
-			},
+			-- {
+			-- 	";f",
+			-- 	function()
+			-- 		Snacks.picker.files({ hidden = true, include_ignored = false })
+			-- 	end,
+			-- 	desc = "Lists files in your current working directory, respects .gitignore",
+			-- },
 			{
 				";r",
 				function()
