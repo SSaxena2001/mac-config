@@ -18,7 +18,7 @@ return {
 				lualine_bold = true,
 				sidebars = { "qf", "vista_kind", "terminal", "packer", "fzf" },
 				on_highlights = function(hl, c)
-					hl["Type"] = { italic = true, fg = c.yellow }
+					hl["Type"] = { underline = true, fg = c.yellow }
 					hl["DiagnosticVirtualTextError"] = { bg = "none", fg = c.red }
 					hl["DiagnosticVirtualTextWarn"] = { bg = "none", fg = c.yellow }
 					hl["DiagnosticVirtualTextInfo"] = { bg = "none", fg = c.blue }

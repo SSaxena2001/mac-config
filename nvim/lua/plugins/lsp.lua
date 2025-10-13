@@ -21,12 +21,25 @@ return {
 		"neovim/nvim-lspconfig",
 		opts = {
 			diagnostics = {
+				float = {
+					border = "rounded",
+				},
 				underline = true,
 				update_in_insert = false,
 				virtual_text = {
 					spacing = 6,
 					source = "if_many",
-					prefix = "",
+					prefix = function(diagnostic)
+						local signs = {
+							ERROR = "",
+							HINT = "",
+							WARN = "",
+							INFO = "",
+						}
+
+						return signs[vim.diagnostic.severity[diagnostic.severity]]
+					end,
+					-- prefix = "",
 				},
 			},
 			inlay_hints = { enabled = false },
