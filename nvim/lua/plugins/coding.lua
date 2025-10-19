@@ -81,7 +81,7 @@ return {
 					Method = "",
 					Function = "",
 					Constructor = "",
-					Field = "",
+					Field = "",
 					Variable = "",
 					Class = "",
 					Interface = "ﰮ",
@@ -119,13 +119,13 @@ return {
 				end,
 				desc = "Find Plugin File",
 			},
-			-- {
-			-- 	";f",
-			-- 	function()
-			-- 		Snacks.picker.files({ hidden = true, include_ignored = false })
-			-- 	end,
-			-- 	desc = "Lists files in your current working directory, respects .gitignore",
-			-- },
+			{
+				";f",
+				function()
+					Snacks.picker.files({ hidden = true, include_ignored = false })
+				end,
+				desc = "Lists files in your current working directory, respects .gitignore",
+			},
 			{
 				";r",
 				function()

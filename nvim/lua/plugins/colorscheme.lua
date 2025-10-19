@@ -19,10 +19,11 @@ return {
 				sidebars = { "qf", "vista_kind", "terminal", "packer", "fzf" },
 				on_highlights = function(hl, c)
 					hl["Type"] = { underline = true, fg = c.yellow }
+					hl["@type"] = { fg = c.orange, bold = true }
 					hl["DiagnosticVirtualTextError"] = { bg = "none", fg = c.red }
 					hl["DiagnosticVirtualTextWarn"] = { bg = "none", fg = c.yellow }
 					hl["DiagnosticVirtualTextInfo"] = { bg = "none", fg = c.blue }
-					hl["DiagnosticVirtualTextHint"] = { bg = "none", fg = c.cyan }
+					hl["DiagnosticVirtualTextHint"] = { bg = "none", fg = c.cyan500 }
 				end,
 			}
 		end,

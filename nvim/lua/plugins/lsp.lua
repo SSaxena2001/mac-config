@@ -31,10 +31,10 @@ return {
 					source = "if_many",
 					prefix = function(diagnostic)
 						local signs = {
-							ERROR = "",
-							HINT = "",
-							WARN = "",
-							INFO = "",
+							ERROR = "",
+							HINT = "",
+							WARN = "",
+							INFO = "",
 						}
 
 						return signs[vim.diagnostic.severity[diagnostic.severity]]

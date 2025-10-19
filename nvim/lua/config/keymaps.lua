@@ -60,7 +60,7 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 
 -- Diagnostics
 keymap.set("n", "<C-j>", function()
-	vim.diagnostic.goto_next()
+	vim.diagnostic.get_next()
 end, opts)
 
 keymap.set("n", "<leader>r", function()
@@ -80,6 +80,7 @@ end, {})
 local esc = vim.api.nvim_replace_termcodes("<Esc>", true, true, true)
 
 vim.api.nvim_create_augroup("JSLogMacro", { clear = true })
+vim.api.nvim_create_augroup("PythonLogMacro", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
 	group = "JSLogMacro",
@@ -89,4 +90,10 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
-keymap.set("n", ";f", ":Pick files<CR>")
+vim.api.nvim_create_autocmd("FileType", {
+	group = "PythonLogMacro",
+	pattern = { "python" },
+	callback = function()
+		vim.fn.setreg("l", "print('" .. esc .. "pa:" .. esc .. "la, " .. esc .. "pl")
+	end,
+})
