@@ -38,6 +38,8 @@ set -gx PATH ~/Library/Android/sdk/tools/bin $PATH
 
 set -gx ANDROID_HOME ~/Library/Android/sdk
 
+set -gx PATH ~/.config/.scripts $PATH
+
 
 if type -q eza
     alias ll "eza -l -g --icons"

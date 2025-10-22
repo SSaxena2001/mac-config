@@ -48,6 +48,7 @@ if vim.fn.has("nvim-0.8") == 1 then
 end
 
 vim.g.lazyvim_picker = "snacks"
+vim.g.lazyvim_cmp = "blink.cmp"
 
 local kind_icons = {
 	Text = "",

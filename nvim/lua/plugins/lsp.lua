@@ -33,7 +33,7 @@ return {
 						local signs = {
 							ERROR = "",
 							HINT = "",
-							WARN = "",
+							WARN = "",
 							INFO = "",
 						}
 

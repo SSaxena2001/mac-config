@@ -78,12 +78,12 @@ return {
 			appearance = {
 				kind_icons = {
 					Text = "",
-					Method = "",
-					Function = "",
-					Constructor = "",
+					-- Method = "",
+					-- Function = "",
+					-- Constructor = "",
 					Field = "",
-					Variable = "",
-					Class = "",
+					Variable = "",
+					-- Class = "",
 					Interface = "ﰮ",
 					Module = "",
 					Property = "",

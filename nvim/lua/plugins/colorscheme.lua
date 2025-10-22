@@ -8,8 +8,8 @@ return {
 				transparent = true,
 				terminal_colors = true,
 				styles = {
-					keywords = { underline = true },
-					constants = { italic = true, bold = true, underline = true },
+					keywords = {},
+					constants = { italic = true, bold = true },
 					functions = {},
 					comments = { italic = true },
 					sidebars = "transparent",
@@ -18,8 +18,6 @@ return {
 				lualine_bold = true,
 				sidebars = { "qf", "vista_kind", "terminal", "packer", "fzf" },
 				on_highlights = function(hl, c)
-					hl["Type"] = { underline = true, fg = c.yellow }
-					hl["@type"] = { fg = c.orange, bold = true }
 					hl["DiagnosticVirtualTextError"] = { bg = "none", fg = c.red }
 					hl["DiagnosticVirtualTextWarn"] = { bg = "none", fg = c.yellow }
 					hl["DiagnosticVirtualTextInfo"] = { bg = "none", fg = c.blue }
@@ -98,7 +96,7 @@ return {
 					error = "bold",
 					comments = "italic",
 					conditionals = "italic",
-					functions = "none",
+					functions = "underline",
 					headings = "bold",
 					operators = "none",
 					strings = "none",
@@ -106,15 +104,15 @@ return {
 
 					-- keywords
 					keywords = "none",
-					keyword_return = "italic",
-					keywords_loop = "none",
+					keyword_return = "none",
+					keywords_loop = "italic",
 					keywords_label = "none",
-					keywords_exception = "none",
+					keywords_exception = "italic",
 
 					-- builtin
 					builtin_constants = "bold",
 					builtin_functions = "none",
-					builtin_types = "bold",
+					builtin_types = "italic",
 					builtin_variables = "none",
 					plugins = {
 						cmp = {
